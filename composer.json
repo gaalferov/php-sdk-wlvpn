@@ -1,0 +1,29 @@
+{
+  "name": "gaalferov/php-sdk-wlvpn",
+  "type": "library",
+  "description": "PHP library for White Label VPN API (WLVPN)",
+  "keywords": [
+    "php",
+    "wlvpn",
+    "vpn"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hennadii Alforov",
+      "email": "admin@gaalferov.com",
+      "homepage": "https://github.com/gaalferov"
+    }
+  ],
+  "require": {
+    "php": ">=7.2.5",
+    "guzzlehttp/guzzle": "^7.0",
+    "ext-json": "*",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "GAAlferov\\WLVPN\\": "src/"
+    }
+  }
+}
