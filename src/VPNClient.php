@@ -71,7 +71,7 @@ class VPNClient
      * @return array
      * @throws WLVPNException|GuzzleException
      */
-    public function getCustomerByUsername(string $username): array {
+    public function getAccountByUsername(string $username): array {
         $result = $this->guzzleClient->request('GET', sprintf('/v2/customers/username/%s', $username));
 
         return ResponseService::getResponseData($result)['customer'];
@@ -85,7 +85,7 @@ class VPNClient
      * @return array
      * @throws WLVPNException|GuzzleException
      */
-    public function getCustomerByCustomerId(int $customerId): array {
+    public function getAccountByCustomerId(int $customerId): array {
         $result = $this->guzzleClient->request('GET', sprintf('/v2/customers/%s', $customerId));
 
         return ResponseService::getResponseData($result)['customer'];
@@ -103,7 +103,7 @@ class VPNClient
      * @return int
      * @throws WLVPNException|GuzzleException
      */
-    public function createCustomer(
+    public function createAccount(
         string $username,
         string $password,
         int $acctGroupId = null,
@@ -142,7 +142,7 @@ class VPNClient
      * @return bool
      * @throws WLVPNException|GuzzleException
      */
-    public function updateCustomer(
+    public function updateAccount(
         int $accountId,
         int $accountStatus,
         string $password = null,
@@ -176,7 +176,7 @@ class VPNClient
      * @return array
      * @throws WLVPNException|GuzzleException
      */
-    public function usageReportByCustomer(
+    public function usageReportByAccount(
         int $accountId,
         DateTime $startDate,
         array $metrics,
@@ -208,7 +208,7 @@ class VPNClient
      * @return bool
      * @throws WLVPNException|GuzzleException
      */
-    public function createCustomerLimitation(int $accountId, $value, string $type = 'rate-limit'): bool
+    public function createAccountLimitation(int $accountId, $value, string $type = 'rate-limit'): bool
     {
         $data = [
             'limitations' => [
@@ -233,7 +233,7 @@ class VPNClient
      * @return bool
      * @throws WLVPNException|GuzzleException
      */
-    public function updateCustomerLimitation(int $accountId, $value, string $type = 'rate-limit'): bool
+    public function updateAccountLimitation(int $accountId, $value, string $type = 'rate-limit'): bool
     {
         $data = [
             'limitations' => [
@@ -256,7 +256,7 @@ class VPNClient
      * @return bool
      * @throws WLVPNException|GuzzleException
      */
-    public function deleteCustomerLimitation(int $accountId): bool
+    public function deleteAccountLimitation(int $accountId): bool
     {
         $result = $this->guzzleClient->request('DELETE', sprintf('/v2/customers/%s/limitations', $accountId));
 
