@@ -4,7 +4,7 @@ Library for White Label VPN API (WLVPN) v2
 
 # Usage
 ```
-composer install gaalferov/php-sdk-wlvpn
+composer require gaalferov/php-sdk-wlvpn
 ```
 
 # Available actions
