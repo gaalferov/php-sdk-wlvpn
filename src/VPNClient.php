@@ -150,9 +150,12 @@ class VPNClient
         int $acctGroupId = null
     ): bool {
         $data = [
-            "acct_status_id" => $accountStatus,
-            "acct_group_id" => $acctGroupId ?? $this->defaultGroupId,
+            'acct_status_id' => $accountStatus
         ];
+
+        if (null !== $acctGroupId) {
+            $data['acct_group_id'] = $acctGroupId ?? $this->defaultGroupId;
+        }
 
         if (null !== $password) {
             $data['cust_password'] = $password;
