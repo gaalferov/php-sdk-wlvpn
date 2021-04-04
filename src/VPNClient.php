@@ -17,6 +17,36 @@ use GuzzleHttp\Exception\GuzzleException;
 class VPNClient
 {
     /**
+     * @var int
+     */
+    public const STATUS_ACTIVE = 1;
+
+    /**
+     * @var int
+     */
+    public const STATUS_SUSPENDED = 2;
+
+    /**
+     * @var int
+     */
+    public const STATUS_CLOSED = 3;
+
+    /**
+     * @var int
+     */
+    public const STATUS_PENDING = 4;
+
+    /**
+     * @var int
+     */
+    public const STATUS_CAP_REACHED = 5;
+
+    /**
+     * @var int
+     */
+    public const STATUS_PAUSED = 6;
+
+    /**
      * @var string
      */
     public const API_URL = 'https://api.wlvpn.com';
